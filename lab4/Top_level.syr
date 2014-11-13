@@ -1,0 +1,759 @@
+Release 14.7 - xst P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.37 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.38 secs
+ 
+--> Reading design: Top_level.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Top_level.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Top_level"
+Output Format                      : NGC
+Target Device                      : xc7a200t-2-fbg676
+
+---- Source Options
+Top Module Name                    : Top_level
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:\tmp\lab4\dff.vhd" into library work
+Parsing entity <dff>.
+Parsing architecture <Behavioral> of entity <dff>.
+Parsing VHDL file "C:\tmp\lab4\shift_reg.vhd" into library work
+Parsing entity <shift_reg>.
+Parsing architecture <Behavioral> of entity <shift_reg>.
+Parsing VHDL file "C:\tmp\lab4\topLevel.vhd" into library work
+Parsing entity <Top_level>.
+Parsing architecture <Behavioral> of entity <top_level>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <Top_level> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:871 - "C:\tmp\lab4\topLevel.vhd" Line 85: Using initial value "00000010111110101111000010000000" for sclk_divider since it is never assigned
+
+Elaborating entity <shift_reg> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <dff> (architecture <Behavioral>) from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <Top_level>.
+    Related source file is "C:\tmp\lab4\topLevel.vhd".
+WARNING:Xst:647 - Input <rotarysw> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <srck>.
+    Found 1-bit register for signal <sclk>.
+    Found 32-bit register for signal <sclk_counter>.
+    Found 1-bit register for signal <rck>.
+    Found 32-bit subtractor for signal <GND_6_o_GND_6_o_sub_2_OUT<31:0>> created at line 180.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  35 D-type flip-flop(s).
+Unit <Top_level> synthesized.
+
+Synthesizing Unit <shift_reg>.
+    Related source file is "C:\tmp\lab4\shift_reg.vhd".
+INFO:Xst:3210 - "C:\tmp\lab4\shift_reg.vhd" line 298: Output port <notq> of the instance <d9> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\tmp\lab4\shift_reg.vhd" line 312: Output port <notq> of the instance <d10> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\tmp\lab4\shift_reg.vhd" line 325: Output port <notq> of the instance <d11> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\tmp\lab4\shift_reg.vhd" line 339: Output port <notq> of the instance <d12> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\tmp\lab4\shift_reg.vhd" line 352: Output port <notq> of the instance <d13> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\tmp\lab4\shift_reg.vhd" line 367: Output port <notq> of the instance <d14> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\tmp\lab4\shift_reg.vhd" line 381: Output port <notq> of the instance <d15> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\tmp\lab4\shift_reg.vhd" line 393: Output port <q> of the instance <d16> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <shift_reg> synthesized.
+
+Synthesizing Unit <dff>.
+    Related source file is "C:\tmp\lab4\dff.vhd".
+    Found 1-bit register for signal <x>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <dff> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 32-bit subtractor                                     : 1
+# Registers                                            : 20
+ 1-bit register                                        : 19
+ 32-bit register                                       : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <Top_level>.
+The following registers are absorbed into counter <sclk_counter>: 1 register on signal <sclk_counter>.
+Unit <Top_level> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 1
+ 32-bit down counter                                   : 1
+# Registers                                            : 19
+ Flip-Flops                                            : 19
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <d7/x> in Unit <shift_reg> is equivalent to the following FF/Latch, which will be removed : <d3/x> 
+INFO:Xst:2261 - The FF/Latch <d5/x> in Unit <shift_reg> is equivalent to the following FF/Latch, which will be removed : <d1/x> 
+INFO:Xst:2261 - The FF/Latch <d8/x> in Unit <shift_reg> is equivalent to the following FF/Latch, which will be removed : <d4/x> 
+INFO:Xst:2261 - The FF/Latch <d6/x> in Unit <shift_reg> is equivalent to the following FF/Latch, which will be removed : <d2/x> 
+WARNING:Xst:3001 - This design contains one or more registers or latches with an active
+   asynchronous set and asynchronous reset. While this circuit can be built,
+   it creates a sub-optimal implementation in terms of area, power and
+   performance. For a more optimal implementation Xilinx highly recommends
+   one of the following:
+
+          1) Remove either the set or reset from all registers and latches if
+             not needed for required functionality
+          2) Modify the code in order to produce a synchronous set
+             and/or reset (both is preferred)
+          3) Use the -async_to_sync option to transform the asynchronous
+             set/reset to synchronous operation
+             (timing simulation highly recommended when using this option)
+
+  Please refer to http://www.xilinx.com search string "Artix7 asynchronous set/reset" for more details.
+
+  List of register instances with asynchronous set and reset:
+    d9/x in unit <shift_reg>
+    d10/x in unit <shift_reg>
+    d11/x in unit <shift_reg>
+    d12/x in unit <shift_reg>
+    d13/x in unit <shift_reg>
+    d14/x in unit <shift_reg>
+    d15/x in unit <shift_reg>
+    d16/x in unit <shift_reg>
+
+
+Optimizing unit <Top_level> ...
+
+Optimizing unit <shift_reg> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Top_level, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 55
+ Flip-Flops                                            : 55
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : Top_level.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 142
+#      GND                         : 1
+#      INV                         : 33
+#      LUT1                        : 1
+#      LUT2                        : 25
+#      LUT3                        : 12
+#      LUT6                        : 6
+#      MUXCY                       : 31
+#      VCC                         : 1
+#      XORCY                       : 32
+# FlipFlops/Latches                : 59
+#      FD                          : 20
+#      FD_1                        : 4
+#      FDC_1                       : 8
+#      FDP_1                       : 8
+#      FDR                         : 8
+#      FDS                         : 7
+#      LDC                         : 4
+# Clock Buffers                    : 1
+#      BUFG                        : 1
+# IO Buffers                       : 18
+#      IBUF                        : 9
+#      IBUFDS                      : 1
+#      OBUF                        : 8
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a200tfbg676-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              55  out of  269200     0%  
+ Number of Slice LUTs:                   77  out of  134600     0%  
+    Number used as Logic:                77  out of  134600     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     89
+   Number with an unused Flip Flop:      34  out of     89    38%  
+   Number with an unused LUT:            12  out of     89    13%  
+   Number of fully used LUT-FF pairs:    43  out of     89    48%  
+   Number of unique control sets:        16
+
+IO Utilization: 
+ Number of IOs:                          22
+ Number of bonded IOBs:                  19  out of    400     4%  
+    IOB Flip Flops/Latches:               4
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+sysclk_p                           | IBUFDS+BUFG            | 33    |
+sclk                               | NONE(srck)             | 2     |
+rck                                | NONE(uut/d5/x)         | 4     |
+uut/d13/s_inv(uut/d13/s_inv1:O)    | NONE(*)(uut/d9/x_LDC)  | 1     |
+srck                               | NONE(uut/d9/x_C)       | 16    |
+uut/d10/s_inv(uut/d10/s_inv1:O)    | NONE(*)(uut/d10/x_LDC) | 1     |
+uut/d11/s_inv(uut/d11/s_inv1:O)    | NONE(*)(uut/d11/x_LDC) | 1     |
+uut/d12/s_inv(uut/d12/s_inv1:O)    | NONE(*)(uut/d12/x_LDC) | 1     |
+-----------------------------------+------------------------+-------+
+(*) These 4 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 3.065ns (Maximum Frequency: 326.223MHz)
+   Minimum input arrival time before clock: 1.470ns
+   Maximum output required time after clock: 1.581ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'sysclk_p'
+  Clock period: 3.065ns (frequency: 326.223MHz)
+  Total number of paths / destination ports: 1585 / 48
+-------------------------------------------------------------------------
+Delay:               3.065ns (Levels of Logic = 2)
+  Source:            sclk_counter_13 (FF)
+  Destination:       sclk_counter_17 (FF)
+  Source Clock:      sysclk_p rising
+  Destination Clock: sysclk_p rising
+
+  Data Path: sclk_counter_13 to sclk_counter_17
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.398   0.798  sclk_counter_13 (sclk_counter_13)
+     LUT6:I0->O            1   0.105   0.793  sclk_counter[31]_GND_6_o_equal_1_o<31>1 (sclk_counter[31]_GND_6_o_equal_1_o<31>)
+     LUT6:I0->O           33   0.105   0.469  sclk_counter[31]_GND_6_o_equal_1_o<31>7 (sclk_counter[31]_GND_6_o_equal_1_o)
+     FDS:S                     0.397          sclk_counter_17
+    ----------------------------------------
+    Total                      3.065ns (1.005ns logic, 2.060ns route)
+                                       (32.8% logic, 67.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'sclk'
+  Clock period: 0.880ns (frequency: 1136.041MHz)
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Delay:               0.880ns (Levels of Logic = 1)
+  Source:            srck (FF)
+  Destination:       srck (FF)
+  Source Clock:      sclk rising
+  Destination Clock: sclk rising
+
+  Data Path: srck to srck
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.398   0.362  srck (srck)
+     LUT2:I1->O            1   0.105   0.000  srck_rstpot (srck_rstpot)
+     FD:D                      0.015          srck
+    ----------------------------------------
+    Total                      0.880ns (0.518ns logic, 0.362ns route)
+                                       (58.8% logic, 41.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'srck'
+  Clock period: 0.973ns (frequency: 1027.591MHz)
+  Total number of paths / destination ports: 28 / 14
+-------------------------------------------------------------------------
+Delay:               0.973ns (Levels of Logic = 1)
+  Source:            uut/d9/x_C (FF)
+  Destination:       uut/d10/x_C (FF)
+  Source Clock:      srck rising
+  Destination Clock: srck rising
+
+  Data Path: uut/d9/x_C to uut/d10/x_C
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC_1:C->Q            1   0.402   0.451  uut/d9/x_C (uut/d9/x_C)
+     LUT3:I1->O            3   0.105   0.000  uut/d9/x1 (uut/d9/x)
+     FDC_1:D                   0.015          uut/d10/x_C
+    ----------------------------------------
+    Total                      0.973ns (0.522ns logic, 0.451ns route)
+                                       (53.6% logic, 46.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'sclk'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              0.572ns (Levels of Logic = 2)
+  Source:            pushbuttons<3> (PAD)
+  Destination:       srck (FF)
+  Destination Clock: sclk rising
+
+  Data Path: pushbuttons<3> to srck
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.001   0.451  pushbuttons_3_IBUF (pushbuttons_3_IBUF)
+     LUT2:I0->O            1   0.105   0.000  srck_rstpot (srck_rstpot)
+     FD:D                      0.015          srck
+    ----------------------------------------
+    Total                      0.572ns (0.121ns logic, 0.451ns route)
+                                       (21.1% logic, 78.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'rck'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              0.355ns (Levels of Logic = 1)
+  Source:            dipswitch<0> (PAD)
+  Destination:       uut/d5/x (FF)
+  Destination Clock: rck rising
+
+  Data Path: dipswitch<0> to uut/d5/x
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.001   0.339  dipswitch_0_IBUF (dipswitch_0_IBUF)
+     FD_1:D                    0.015          uut/d5/x
+    ----------------------------------------
+    Total                      0.355ns (0.016ns logic, 0.339ns route)
+                                       (4.5% logic, 95.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'uut/d13/s_inv'
+  Total number of paths / destination ports: 2 / 1
+-------------------------------------------------------------------------
+Offset:              1.470ns (Levels of Logic = 2)
+  Source:            pushbuttons<0> (PAD)
+  Destination:       uut/d9/x_LDC (LATCH)
+  Destination Clock: uut/d13/s_inv falling
+
+  Data Path: pushbuttons<0> to uut/d9/x_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   0.001   0.616  pushbuttons_0_IBUF (pushbuttons_0_IBUF)
+     LUT3:I0->O            3   0.105   0.351  uut/d13/r_inv1 (uut/d13/r_inv)
+     LDC:CLR                   0.397          uut/d9/x_LDC
+    ----------------------------------------
+    Total                      1.470ns (0.503ns logic, 0.967ns route)
+                                       (34.2% logic, 65.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'srck'
+  Total number of paths / destination ports: 26 / 18
+-------------------------------------------------------------------------
+Offset:              1.470ns (Levels of Logic = 2)
+  Source:            pushbuttons<0> (PAD)
+  Destination:       uut/d9/x_C (FF)
+  Destination Clock: srck rising
+
+  Data Path: pushbuttons<0> to uut/d9/x_C
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   0.001   0.616  pushbuttons_0_IBUF (pushbuttons_0_IBUF)
+     LUT3:I0->O            3   0.105   0.351  uut/d12/r_inv1 (uut/d12/r_inv)
+     FDC_1:CLR                 0.397          uut/d12/x_C
+    ----------------------------------------
+    Total                      1.470ns (0.503ns logic, 0.967ns route)
+                                       (34.2% logic, 65.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'uut/d10/s_inv'
+  Total number of paths / destination ports: 2 / 1
+-------------------------------------------------------------------------
+Offset:              1.470ns (Levels of Logic = 2)
+  Source:            pushbuttons<0> (PAD)
+  Destination:       uut/d10/x_LDC (LATCH)
+  Destination Clock: uut/d10/s_inv falling
+
+  Data Path: pushbuttons<0> to uut/d10/x_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   0.001   0.616  pushbuttons_0_IBUF (pushbuttons_0_IBUF)
+     LUT3:I0->O            3   0.105   0.351  uut/d10/r_inv1 (uut/d10/r_inv)
+     LDC:CLR                   0.397          uut/d10/x_LDC
+    ----------------------------------------
+    Total                      1.470ns (0.503ns logic, 0.967ns route)
+                                       (34.2% logic, 65.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'uut/d11/s_inv'
+  Total number of paths / destination ports: 2 / 1
+-------------------------------------------------------------------------
+Offset:              1.470ns (Levels of Logic = 2)
+  Source:            pushbuttons<0> (PAD)
+  Destination:       uut/d11/x_LDC (LATCH)
+  Destination Clock: uut/d11/s_inv falling
+
+  Data Path: pushbuttons<0> to uut/d11/x_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   0.001   0.616  pushbuttons_0_IBUF (pushbuttons_0_IBUF)
+     LUT3:I0->O            3   0.105   0.351  uut/d11/r_inv1 (uut/d11/r_inv)
+     LDC:CLR                   0.397          uut/d11/x_LDC
+    ----------------------------------------
+    Total                      1.470ns (0.503ns logic, 0.967ns route)
+                                       (34.2% logic, 65.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'uut/d12/s_inv'
+  Total number of paths / destination ports: 2 / 1
+-------------------------------------------------------------------------
+Offset:              1.470ns (Levels of Logic = 2)
+  Source:            pushbuttons<0> (PAD)
+  Destination:       uut/d12/x_LDC (LATCH)
+  Destination Clock: uut/d12/s_inv falling
+
+  Data Path: pushbuttons<0> to uut/d12/x_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   0.001   0.616  pushbuttons_0_IBUF (pushbuttons_0_IBUF)
+     LUT3:I0->O            3   0.105   0.351  uut/d12/r_inv1 (uut/d12/r_inv)
+     LDC:CLR                   0.397          uut/d12/x_LDC
+    ----------------------------------------
+    Total                      1.470ns (0.503ns logic, 0.967ns route)
+                                       (34.2% logic, 65.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'uut/d12/s_inv'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              1.581ns (Levels of Logic = 2)
+  Source:            uut/d12/x_LDC (LATCH)
+  Destination:       ledsboard<3> (PAD)
+  Source Clock:      uut/d12/s_inv falling
+
+  Data Path: uut/d12/x_LDC to ledsboard<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              2   0.521   0.604  uut/d12/x_LDC (uut/d12/x_LDC)
+     LUT3:I0->O            3   0.105   0.351  uut/d12/x1 (uut/d12/x)
+     OBUF:I->O                 0.000          ledsboard_3_OBUF (ledsboard<3>)
+    ----------------------------------------
+    Total                      1.581ns (0.626ns logic, 0.955ns route)
+                                       (39.6% logic, 60.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'srck'
+  Total number of paths / destination ports: 16 / 8
+-------------------------------------------------------------------------
+Offset:              1.309ns (Levels of Logic = 2)
+  Source:            uut/d15/x_C (FF)
+  Destination:       ledsmain<2> (PAD)
+  Source Clock:      srck rising
+
+  Data Path: uut/d15/x_C to ledsmain<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC_1:C->Q            1   0.402   0.451  uut/d15/x_C (uut/d15/x_C)
+     LUT3:I1->O            3   0.105   0.351  uut/d15/x1 (uut/d15/x)
+     OBUF:I->O                 0.000          ledsmain_2_OBUF (ledsmain<2>)
+    ----------------------------------------
+    Total                      1.309ns (0.507ns logic, 0.802ns route)
+                                       (38.7% logic, 61.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'uut/d11/s_inv'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              1.581ns (Levels of Logic = 2)
+  Source:            uut/d11/x_LDC (LATCH)
+  Destination:       ledsmain<2> (PAD)
+  Source Clock:      uut/d11/s_inv falling
+
+  Data Path: uut/d11/x_LDC to ledsmain<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              2   0.521   0.604  uut/d11/x_LDC (uut/d11/x_LDC)
+     LUT3:I0->O            3   0.105   0.351  uut/d11/x1 (uut/d11/x)
+     OBUF:I->O                 0.000          ledsboard_2_OBUF (ledsboard<2>)
+    ----------------------------------------
+    Total                      1.581ns (0.626ns logic, 0.955ns route)
+                                       (39.6% logic, 60.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'uut/d10/s_inv'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              1.581ns (Levels of Logic = 2)
+  Source:            uut/d10/x_LDC (LATCH)
+  Destination:       ledsmain<1> (PAD)
+  Source Clock:      uut/d10/s_inv falling
+
+  Data Path: uut/d10/x_LDC to ledsmain<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              2   0.521   0.604  uut/d10/x_LDC (uut/d10/x_LDC)
+     LUT3:I0->O            3   0.105   0.351  uut/d10/x1 (uut/d10/x)
+     OBUF:I->O                 0.000          ledsboard_1_OBUF (ledsboard<1>)
+    ----------------------------------------
+    Total                      1.581ns (0.626ns logic, 0.955ns route)
+                                       (39.6% logic, 60.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'uut/d13/s_inv'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              1.581ns (Levels of Logic = 2)
+  Source:            uut/d9/x_LDC (LATCH)
+  Destination:       ledsmain<0> (PAD)
+  Source Clock:      uut/d13/s_inv falling
+
+  Data Path: uut/d9/x_LDC to ledsmain<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              2   0.521   0.604  uut/d9/x_LDC (uut/d9/x_LDC)
+     LUT3:I0->O            3   0.105   0.351  uut/d9/x1 (uut/d9/x)
+     OBUF:I->O                 0.000          ledsboard_0_OBUF (ledsboard<0>)
+    ----------------------------------------
+    Total                      1.581ns (0.626ns logic, 0.955ns route)
+                                       (39.6% logic, 60.4% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock sclk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+sclk           |    0.880|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock srck
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+rck            |    1.617|         |         |         |
+srck           |    0.973|         |         |         |
+uut/d10/s_inv  |         |    1.245|         |         |
+uut/d11/s_inv  |         |    1.245|         |         |
+uut/d12/s_inv  |         |    1.245|         |         |
+uut/d13/s_inv  |         |    1.245|         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock sysclk_p
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+sysclk_p       |    3.065|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock uut/d10/s_inv
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+rck            |         |         |    1.617|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock uut/d11/s_inv
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+rck            |         |         |    1.617|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock uut/d12/s_inv
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+rck            |         |         |    1.617|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock uut/d13/s_inv
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+rck            |         |         |    1.617|         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 34.00 secs
+Total CPU time to Xst completion: 33.78 secs
+ 
+--> 
+
+Total memory usage is 351304 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :   13 (   0 filtered)
+

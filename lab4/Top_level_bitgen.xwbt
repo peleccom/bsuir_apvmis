@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\tmp\lab4\Top_level.ncd
+OUTFILE=C:\tmp\lab4\Top_level.bit
+FAMILY=Artix7
+PART=xc7a200t-2fbg676
+WORKINGDIR=C:\tmp\lab4
+LICENSE=ISE
+USER_INFO=__0_0_0

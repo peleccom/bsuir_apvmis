@@ -1,0 +1,98 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -v 3 -s 2 -n
+3 -fastpaths -xml Top_level.twx Top_level.ncd -o Top_level.twr Top_level.pcf
+-ucf top.ucf
+
+Design file:              Top_level.ncd
+Physical constraint file: Top_level.pcf
+Device,package,speed:     xc7a200t,fbg676,C,-2 (PRODUCTION 1.10 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock pushbuttons<2>
+--------------+------------+------------+------------+------------+------------------+--------+
+              |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source        | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+--------------+------------+------------+------------+------------+------------------+--------+
+pushbuttons<0>|    1.405(F)|      SLOW  |    0.111(F)|      SLOW  |uut/d10/s_inv     |   0.000|
+              |    0.961(F)|      SLOW  |    0.699(F)|      SLOW  |uut/d11/s_inv     |   0.000|
+              |    1.025(F)|      SLOW  |    0.574(F)|      SLOW  |uut/d12/s_inv     |   0.000|
+              |    1.325(F)|      SLOW  |    0.283(F)|      SLOW  |uut/d13/s_inv     |   0.000|
+--------------+------------+------------+------------+------------+------------------+--------+
+
+Clock pushbuttons<2> to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+ledsboard<0>|        12.748(F)|      SLOW  |         5.915(F)|      FAST  |uut/d13/s_inv     |   0.000|
+ledsboard<1>|        11.835(F)|      SLOW  |         5.312(F)|      FAST  |uut/d10/s_inv     |   0.000|
+ledsboard<2>|        12.474(F)|      SLOW  |         5.566(F)|      FAST  |uut/d11/s_inv     |   0.000|
+ledsboard<3>|        12.177(F)|      SLOW  |         5.465(F)|      FAST  |uut/d12/s_inv     |   0.000|
+ledsmain<0> |        13.237(F)|      SLOW  |         5.933(F)|      FAST  |uut/d13/s_inv     |   0.000|
+ledsmain<1> |        12.734(F)|      SLOW  |         5.543(F)|      FAST  |uut/d10/s_inv     |   0.000|
+ledsmain<2> |        13.322(F)|      SLOW  |         5.843(F)|      FAST  |uut/d11/s_inv     |   0.000|
+ledsmain<3> |        12.681(F)|      SLOW  |         5.434(F)|      FAST  |uut/d12/s_inv     |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock pushbuttons<2>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+pushbuttons<2> |         |         |    1.365|    1.365|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock sysclk_n
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+sysclk_n       |    2.798|         |         |         |
+sysclk_p       |    2.798|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock sysclk_p
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+sysclk_n       |    2.798|         |         |         |
+sysclk_p       |    2.798|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Sat Jul 12 01:48:18 2014 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 531 MB
+
+
+
